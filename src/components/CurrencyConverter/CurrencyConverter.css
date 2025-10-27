@@ -1,0 +1,29 @@
+select,
+input[type="number"],
+input[readonly] {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.6rem 0;
+    border: 1px solid grey;
+    font-size: 1rem;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-top: 0.8rem;
+    font-weight: 500;
+    color: black;
+    text-transform: capitalize;
+}
+
+button {
+    width: 100%;
+    background: green;
+    color: black;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}

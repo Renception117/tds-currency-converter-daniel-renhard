@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import CurrencyDropdown from '../CurrencyDropdown/CurrencyDropdown'
+import './CurrencyConverter.css'
 
 function CurrencyConverter() {
 

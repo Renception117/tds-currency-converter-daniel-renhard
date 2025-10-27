@@ -9,16 +9,19 @@ interface DropdownProps {
     onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-function CurrencyDropdown({options, name, value, onChange}: DropdownProps) {
+function CurrencyDropdown({ options, name, value, onChange }: DropdownProps) {
 
-    const optionMarkup = options.map( option => <option key={option.id} value={option.short_code}>{option.name}</option> )
+    const optionMarkup = options.map(option => <option key={option.id} value={option.short_code}>{option.name}</option>)
 
     return (
-        <select name={name} value={value} onChange={onChange}>
-            {options.length === 0 && <option>Loading...</option>}
-            {options.length > 0 && <option value=''>Please select a currency</option>}
-            {optionMarkup}
-        </select>
+        <label>
+            {name}:
+            <select name={name} value={value} onChange={onChange}>
+                {options.length === 0 && <option>Loading...</option>}
+                {options.length > 0 && <option value=''>Please select a currency</option>}
+                {optionMarkup}
+            </select>
+        </label>
     )
 }
 
