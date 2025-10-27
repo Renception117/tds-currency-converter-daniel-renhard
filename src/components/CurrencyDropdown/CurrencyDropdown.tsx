@@ -15,6 +15,8 @@ function CurrencyDropdown({options, name, value, onChange}: DropdownProps) {
 
     return (
         <select name={name} value={value} onChange={onChange}>
+            {options.length === 0 && <option>Loading...</option>}
+            {options.length > 0 && <option value=''>Please select a currency</option>}
             {optionMarkup}
         </select>
     )

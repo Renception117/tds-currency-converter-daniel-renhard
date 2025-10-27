@@ -5,7 +5,7 @@ function CurrencyConverter() {
 
     const [currencies, setCurrencies] = useState([]);
 
-    const [fieldData, setFieldData] = useState({ from: '', to: '', initialValue: 0, convertedValue: 0 });
+    const [fieldData, setFieldData] = useState({ from: '', to: '', initialValue: '', convertedValue: '' });
 
     useEffect(() => {
         let ignore = false;
@@ -34,6 +34,19 @@ function CurrencyConverter() {
 
     }
 
+    function handleConvertClick(e: React.MouseEvent<HTMLButtonElement>) {
+        //validate
+        async function fetchConvert() {
+            const response = await fetch(`https://api.currencybeacon.com/v1/convert?from=${fieldData.from}&to=${fieldData.to}&amount=${fieldData.initialValue}&api_key=abyKdqZ554VgCfwkKTV9QH9mA7Kvhwyz`);
+            const json = await response.json();
+            setFieldData({...fieldData,
+                convertedValue: json.value
+            })
+        }
+
+        fetchConvert();
+    }
+
     return (
         <>
             <CurrencyDropdown options={currencies} name='from' value={fieldData.from} onChange={handleFieldChange} />
@@ -46,6 +59,7 @@ function CurrencyConverter() {
                 Converted Value:
                 <input name="convertedValue" readOnly value={fieldData.convertedValue} />
             </label>
+            <button onClick={handleConvertClick}>Convert</button>
         </>
     )
 }
