@@ -11,7 +11,7 @@ interface DropdownProps {
 
 function CurrencyDropdown({ options, name, value, onChange }: DropdownProps) {
 
-    const optionMarkup = options.map(option => <option key={option.id} value={option.short_code}>{option.name}</option>)
+    const optionMarkup = options.map(option => <option key={option.id} value={option.short_code}>{option.name} ({option.short_code})</option>)
 
     return (
         <label>
