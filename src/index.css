@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Verdana", "Helvetica", "Arial", sans-serif;
+}
+
+body {
+  background: #616060;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+#root {
+  background: #fff;
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+#root h1 {
+  margin-bottom: 1.5rem;
+}
